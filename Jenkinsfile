@@ -9,6 +9,7 @@ pipeline {
         sh "docker system prune -a -f"
         sh "docker build -t vimith2 ."
         sh "docker run -itdp 8081:8080 --name renuka2 vimith2"
+        sh "docker exec renuka2 chmod -R 777 /usr/local/tomcat/webapps/"
       }
     }
   }
