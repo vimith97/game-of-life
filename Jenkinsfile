@@ -9,7 +9,7 @@ pipeline {
         sh "docker system prune -a -f"
       }
     }
-    stage ('stage-2) {
+    stage ('stage-2') {
       steps {
         sh "docker build -t vimith2 ."
         sh "docker run -itdp 8083:8080 --name cont1 vimith2"
